@@ -28,7 +28,7 @@ for Zahl in range(1,60,1):
         print(Zahl)
                 
 for pos in range(strip.numPixels()):
-    
+    time.sleep(0.5)
     if pos%5 == 0 and pos%3 == 0:
         strip.setPixelColor(pos , Color(0, 255, 0))
     elif  pos%5 == 0:
@@ -37,6 +37,6 @@ for pos in range(strip.numPixels()):
         strip.setPixelColor(pos , Color(255,0, 0))
     else:
         strip.setPixelColor(pos , Color(50, 50, 50))
-        strip.show()
+    strip.show()
 
        

@@ -14,10 +14,16 @@ LED_CHANNEL = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 
         
 def sek (pos, color, strip):
-    if pos == datetime.now().second:
+    while pos == datetime.now().second:
             strip.setPixelColor(pos , Color(0, 255, 0))
             strip.show()
-            
+            time.sleep(0.1)
+            if datetime.now().second != last.second:
+                strip.setPixelColor(pos , Color(0, 0, 0))
+                strip.show()
+#     elif pos != datetime.now().second:
+#             strip.setPixelColor(pos , Color(0, 0, 0))
+#             
 def kleinerals (pos, color, strip):
      p = 0
      while p <= pos:
@@ -42,11 +48,11 @@ while True:
         last = datetime.now()
         
     sek(datetime.now().second, Color(0, 255, 0), strip)
-    
     kleinerals(datetime.now().minute, Color(0, 0, 50), strip)
+
     
     for pos in range(strip.numPixels()):
-        strip.setPixelColor(pos , Color(0, 0, 0))
+#         strip.setPixelColor(pos , Color(0, 0, 0))
         strip.setBrightness(250)
         strip.show()
          

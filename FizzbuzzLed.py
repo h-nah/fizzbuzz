@@ -34,7 +34,7 @@ for pos in range(strip.numPixels()):
     elif  pos%5 == 0:
         strip.setPixelColor(pos , Color(0, 0, 255))
     elif  pos%3 == 0:
-        strip.setPixelColor(pos , Color(255,0, 0))
+        strip.setPixelColor(pos , Color(250,0, 0))
     else:
         strip.setPixelColor(pos , Color(50, 50, 50))
     strip.show()
